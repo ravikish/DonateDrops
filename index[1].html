@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	  <title>HOME</title>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="a.css"> 
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	 
+	  <script type="text/JavaScript" src="state.js"></script>
+	  <script type="text/javascript">
+		function validate()
+		{
+				if(document.logIn.user.value==""){
+					alert("Mobile Number must be filled");
+					return false;
+				}
+				if(document.logIn.user.value.length != 10 ){
+					alert("Mobile number must be 10 digits.");
+					return false;
+				}
+				if(document.logIn.pass.value==""){
+					alert("Password must be Filled");
+					return false;
+				}
+		}	
+		function valid()
+		{
+				if(document.signUp.user.value==""){
+					alert("User Name Must be Filled");
+					return false;
+				}
+				if(document.signUp.num.value==""){
+					alert("MobileNumber must be Filled");
+					return false;
+				}
+				
+				if(document.signUp.num.value.length != 10 )
+				{
+					alert("Phone Number must be 10 Digits.");
+					return false;
+				}
+				if(document.signUp.cnum.value=="")
+				{
+					alert("Please confirm your MobileNumber");
+					return false;
+				}
+				if(document.signUp.num.value!=document.signUp.cnum.value)
+				{
+					alert("Check your Mobile Number");
+					return false;
+				}
+				if(document.signUp.pass.value.length < 4)
+				{
+					alert("Password must Minimum (4 Digits/Characters)");
+					return false;
+				}
+				if(document.signUp.pass.value=="")
+				{
+					alert("Password must be filled");
+					return false;
+				}
+				if(document.signUp.cpass.value=="")
+				{
+					alert("Please Confirm Your Password");
+					return false;
+				}
+				if(document.signUp.pass.value!=document.signUp.cpass.value){
+					alert("Password in both not matteched");
+					return false;
+				}
+				if(document.signUp.email.value==""){
+					alert("Email must be filled");
+					return false;
+				}
+				var x=document.signUp.email.value;
+				var atpos = x.indexOf("@");
+				var dotpos = x.lastIndexOf(".");
+				if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length)
+				{
+					alert("Not a valid e-mail address");
+					return false;
+				}
+				
+				if(document.signUp.bg.value=="Select"){
+					alert("Please select your BloodGroup");
+					return false;
+				}
+				if(document.signUp.st.value=="SELECT YOUR STATE"){
+					alert("Please select your State");
+					return false;
+				}
+				if(document.signUp.dist.value=="Select your District"){
+					alert("Please select your District");
+					return false;
+				}
+		}
+	  </script>
+	<style>
+  
+  .back{
+		background-color :#DCDCDC;
+		
+	}
+  .nav-default{
+	background-color:#dfe0e3;
+  }
+  .red{
+	color:#ee2d24;
+  }
+  .bg-default{
+	background-color:#FFF8DC;
+  }
+  .btn-change:hover
+  {
+		height: 50px;
+		-webkit-transform: scale(1.1);
+		background: #FF69B4;
+  }
+  
+  </style>
+</head>
+<body class = "back">
+	<nav class="navbar navbar-default">
+		<div class= "container-fluid">
+			<!---logo-->
+			<div class="navbar-header">
+				
+				<a href="#" class="navbar-brand red">DonateDrops</a>
+				<img src="img/c.jpg" class="pull-right" class="img-responsive" width="50px" height="50px">
+			</div>
+			<a href="search.php"><button type="button" class="btn btn-success pull-right btn-change">Search Blood Group</button></a>
+		</div>
+	
+	</nav>
+
+ 
+	<div class="container-fluid">
+		<div class="col-md-8" >
+			
+				<div class = "row"> 
+				<img src="img/3aa.jpg" class="pull-right" width="100%" height="300px" class="img-responsive" alt="saveLife">
+				
+				</div>
+				<div class = "row"> 
+				<img src="img1/h.jpg" width="1500px" class="img-responsive" >
+				
+				</div>
+				
+		</div>
+		
+		<div class="col-md-4 ">
+			
+			<div class="form-body">
+				<ul class="nav nav-tabs final-login">
+					<li class="active"><a data-toggle="tab" href="#sectionA">Sign In</a></li>
+					<li><a data-toggle="tab"  href="#sectionB">SignUp</a></li>
+				</ul>
+				<div class="tab-content">
+					<div id="sectionA" class="tab-pane fade in active bg-default">
+					<div class="innter-form">
+						<form class="sa-innate-form" name="logIn"  onsubmit="return validate()" method="post" action="reLog.php">
+						<label>Mobile Number</label>
+						<input type="number" class="form-control bfh-number" name="user">
+						<label>Password</label>
+						<input type="password" name="pass">
+						<button type="submit" class="btn btn-info btn-block">LogIn</button>
+						<a href="forgot.html">Forgot Password?</a>
+						</form>
+						</div>
+						
+						<div class="clearfix"></div>
+					</div>
+					<div id="sectionB" class="tab-pane fade bg-default ">
+						<div class="innter-form">
+						<form class="sa-innate-form" name="signUp"  onsubmit="return valid()" method="post" action="load.php">
+						<label>Name</label>
+						<input type="text"  name="user">
+						<label>PhoneNumber</label>
+						<input type="number" class="form-control bfh-number"  name="num">
+						<label>Confirm PhoneNumber</label>
+						<input type="number" class="form-control bfh-number"  name="cnum">
+						<label>Password</label>
+						<input type="password" name="pass">
+						<label>Confirm Password</label>
+						<input type="password" name="cpass">
+						<label>Email Address</label>
+						<input type="text" name="email">
+						
+						<label for="sel1">BLOOD GROUP:</label>
+						  <select class="form-control" name="bg" id="sel1">
+							<option>Select</option>
+							<option>O+</option>
+							<option>O-</option>
+							<option>AB+</option>
+							<option>AB-</option>
+							<option>A+</option>
+							<option>A-</option>
+							<option>B+</option>
+							<option>B-</option>
+						  </select>
+						</label>
+						<label>Select Your State:</label>
+							<select name="st" id="listBox" onchange='selct_district(this.value)'>
+							</select>
+						</label>
+						
+						<label>Select Your District:</label>
+							<select name="dist" id='secondlist'>
+							</select></label>
+						<button type="submit" class="btn btn-info btn-block">Register</button>
+						<p>By clicking Rigister, you agree to DonateDrops User Agreement, Privacy Policy, and Cookie Policy.</p>
+						</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+</div>
+
+</body>
+</html>

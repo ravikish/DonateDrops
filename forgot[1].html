@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	  <title>Forgot</title>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="a.css"> 
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	  <script>
+	  function valid()
+	  {
+		if(document.for.ph.value=="")
+		{
+			alert("Please enter Mobile Number");
+			return false;
+		}
+		if(document.for.ph.value.length!=10)
+		{
+			alert("Please Enter valid Mobile Number(10 Digits)");
+			return false;
+		}
+	  }
+	  </script>
+	  <style>
+		.back{
+			background-image: url("img/3z.jpg")
+		}
+		.nav-default{
+			background-color:#dfe0e3;
+		}
+	  </style>
+</head>
+<body class="back">
+
+	<nav class="navbar navbar-default">
+		<div class= "container-fluid">
+			<!---logo-->
+			<div class="navbar-header">
+				
+				<a href="#" class="navbar-brand red">DonateDrops</a>
+				<img src="img/c.jpg" class="pull-right" class="img-responsive" width="50px" height="50px">
+			</div>
+	
+		</div>
+	
+	</nav>
+	<div class="col-md-4 ">
+	</div>
+	<div class="col-md-4 ">
+		<form name="for" onsubmit="return valid()" method="post" action="forgot.php">
+			<div class="panel panel-default">
+				<label>Enter Your Mobile Number</label>
+				<input type="number" name="ph">
+				<button type="submit" class="btn btn-info btn-block">Request Password</button>
+			</div>
+		</form>
+	</div>
+	<div class="col-md-4 ">
+	</div>
+	
+</body>
+
+
+</html>

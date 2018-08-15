@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	  <title>Status</title>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="a.css"> 
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	  <style>
+		.back{
+				background-color :#DCDCDC;
+				background-image: url(img/j.jpg);
+			}
+	  </style>
+	  
+</head>
+<body class="back">
+	<nav class="navbar navbar-default">
+			<div class= "container-fluid">
+				<!---logo-->
+				<div class="navbar-header">
+					
+					<a href="#" class="navbar-brand red">DonateDrops</a>
+					<img src="img/c.jpg" class="pull-right" class="img-responsive" width="50px" height="50px">
+				</div>
+				<a href="logout.php"><button type="button" class="btn btn-success pull-right btn-change">LogOut</button></a>
+			</div>
+		
+	</nav>
+	<div class="col-md-4" >
+	<br><br><br><br><br><br><br><br>
+			<div class="panel panel-default">
+			
+				<h3 align="center" class="req"><u>Update Status</u></h3>
+				<form  method="post" action="status.php">
+					<label for="sel1">Result</label>
+					<select class="form-control" name="res" id="sel1">
+						<option>Success</option>
+						<option>PartialSuccess</option>
+						<option>Failure</option>
+					</select>
+					<label>Enter Donor Number:</label><br>
+					<input type="text" size="56%"value="unknown" name="dnum"><br>
+					
+					<label>Calls Received</label><br>
+					<input type="number" value="1" name="calls"><br>
+					<button type="submit" class="btn btn-info btn-block">Update Status</button>
+				</form>
+			</div>
+		</div>
+</body>
+</html>
